@@ -8,9 +8,10 @@
   },
   "dependencies": {
     "@react-native-community/slider": "^1.0.4",
-    "react": "16.8.3",
-    "react-native": "0.59.4",
+    "react": "16.8.6",
+    "react-native": "0.60",
     "react-native-sound": "^0.10.12",
+    "react-dom": "16.9.0",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
@@ -18,7 +19,7 @@
     "@babel/runtime": "7.4.3",
     "babel-jest": "24.7.1",
     "jest": "24.7.1",
-    "metro-react-native-babel-preset": "0.53.1",
+    "metro-react-native-babel-preset": "0.56.0",
     "react-test-renderer": "16.8.3"
   },
   "jest": {

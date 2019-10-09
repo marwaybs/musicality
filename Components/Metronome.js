@@ -20,6 +20,7 @@ export default class Metronome extends Component {
       nextPress: 1,
       correct: false,
       score: 0,
+      pressTimeFrame: null, 
     };
   }
 
@@ -50,14 +51,19 @@ export default class Metronome extends Component {
   };
 
   setNextPress() {
-
+    this.setState({
+      pressTimeFrame: performance.now(),
+      nextPress: 1,
+    })
   }
 
   _checkPress() {
-    const {bar, count, beatsPerMeasure, nextPress} = this.state;
+    const {bar, count, beatsPerMeasure, nextPress, pressTimeFrame} = this.state;
     // have to find the 1 beat before 
     const currentBeat = bar * beatsPerMeasure + count;
     this.setState({correct: currentBeat === nextPress ? true : false });
+    const points = performance.now - pressTimeFrame;
+    this.setState({score: points});
 
     // Wait for half a beat then have a full beat to press
     // calculate score based on how on the beat it is
